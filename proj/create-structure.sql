@@ -42,7 +42,7 @@ CREATE TABLE "requiments" (
     "project_id"          INTEGER  NOT NULL REFERENCES "project" ON UPDATE RESTRICT ON DELETE RESTRICT,
     "formulation"         TEXT     NOT NULL,
     "start_date"          DATE,
-    "planning_INTERVAL"   INTERVAL NOT NULL,
+    "planning_time"   INTERVAL NOT NULL,
 	"runtime_priority"    INTEGER  NOT NULL CHECK ("runtime_priority" IN (1, 2, 3)),
 	/*
 		1 - LOW
@@ -75,7 +75,7 @@ CREATE TABLE "planning_test" (
 	"requiments_id"       INTEGER  NOT NULL REFERENCES "requiments" ON UPDATE RESTRICT ON DELETE RESTRICT,
 	"description"         TEXT     NOT NULL,
 	"expected_result"     TEXT     NOT NULL,
-	"planned_INTERVAL"    INTERVAL NOT NULL,
+	"planned_time"    INTERVAL NOT NULL,
 	"test_lvl"            INTEGER  NOT NULL CHECK ("test_lvl" IN (1, 2, 3))
 	/*
 		1 - superficial
